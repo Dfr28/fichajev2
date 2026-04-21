@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p $PORT -H $HOSTNAME",
-    "lint": "next lint",
-  
+    "lint": "next lint"
   },
   "dependencies": {
     
