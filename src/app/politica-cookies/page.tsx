@@ -9,7 +9,7 @@ export default function CookiesPolicyPage() {
         El usuario puede configurar o retirar su consentimiento en cualquier momento desde el panel de preferencias.
       </p>
       <p>
-        Para mas informacion, contacte con [EMAIL] e indique en el asunto "Cookies".
+        Para mas informacion, contacte con [EMAIL] e indique en el asunto «Cookies».
       </p>
     </main>
   );
