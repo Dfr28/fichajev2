@@ -1,0 +1,93 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String     @id @default(cuid())
+  email     String     @unique
+  password  String
+  name      String
+  role      UserRole   @default(EMPLOYEE)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  // Relations
+  company   Company?   @relation(fields: [companyId], references: [id])
+  companyId String?
+  
+  registros Registro[]
+
+  @@index([email])
+  @@index([role])
+}
+
+enum UserRole {
+  ADMIN
+  OWNER
+  EMPLOYEE
+}
+
+model Company {
+  id        String   @id @default(cuid())
+  name      String
+  nif       String   @unique
+  email     String
+  phone     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Subscription
+  plan      Plan     @default(STARTER)
+  maxEmployees Int
+  activeUntil DateTime
+
+  // Relations
+  users     User[]
+  registros Registro[]
+
+  @@index([nif])
+}
+
+enum Plan {
+  STARTER
+  PRO
+  BUSINESS
+}
+
+model Registro {
+  id        String   @id @default(cuid())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  companyId String
+  
+  entrada   DateTime @default(now())
+  salida    DateTime?
+  nota      String?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([companyId])
+  @@index([entrada])
+}
+
+model Subscription {
+  id        String   @id @default(cuid())
+  stripeId  String   @unique
+  company   Company? @relation(fields: [companyId], references: [id])
+  companyId String?
+  
+  status    String   // active, past_due, canceled
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
