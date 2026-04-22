@@ -52,6 +52,7 @@ model Company {
   // Relations
   users     User[]
   registros Registro[]
+  subscriptions Subscription[]
 
   @@index([nif])
 }
