@@ -1,50 +1,48 @@
-# Fichaje SaaS Retro-Brutalista
+# Fichaje SaaS - Control Horario en Barcelona
 
-Plataforma SaaS profesional de **control horario legal** para empresas españolas, cumpliendo con la normativa laboral española (RD 1741/1998, RGPD) con diseño retro-brutalista minimalista en B&W.
+Plataforma SaaS profesional de **control horario legal** para empresas españolas, cumpliendo con la normativa laboral española (RD 1741/1998, RGPD) con diseño brutalista minimalista B&W.
+
+**Sistema de fichaje en Barcelona y toda España** - Cumplimiento garantizado con Real Decreto 1741/1998.
 
 ## 🎯 Características Principales
 
-- ✅ **Cumplimiento Normativo**: RD 1741/1998 - Registro horario completo
-- ✅ **Trazabilidad Total**: Historial de jornadas con timestamps
-- ✅ **Dashboard Multirol**: Empleado, Dueño, Administrador
-- ✅ **Métricas Empresariales**: Ingresos, usuarios, empresas
-- ✅ **Exportación de Reportes**: Excel, PDF para inspección laboral
-- ✅ **RGPD Completo**: Privacidad garantizada, conservación 4 años
-- ✅ **Pagos Stripe**: Suscripciones recurrentes integradas
-- ✅ **SQLite**: Sin necesidad de instalar BD en Coolify
-- ✅ **Responsive**: Diseño adaptable a todos los dispositivos
-- ✅ **Animaciones**: Fade-in y scroll animations
+- ✅ **Cumplimiento Normativo Total**: RD 1741/1998 y RGPD
+- ✅ **Registro Horario Completo**: Entrada, salida, timestamps exactos
+- ✅ **Trazabilidad para Inspección**: Auditoría completa, exportación legal
+- ✅ **Dashboard Multirol**: Empleado, Dueño, AdministradorPanel
+- ✅ **Métricas Empresariales**: Ingresos, usuarios activos, análisis
+- ✅ **Blog Integrado**: Artículos sobre normativa y comparativas
+- ✅ **Página de Estado**: Uptime en tiempo real (99.9%+)
+- ✅ **Formulario de Contacto**: Con mailer automático (Nodemailer)
+- ✅ **Exportación Múltiple**: PDF, Excel para Inspección de Trabajo
+- ✅ **Pagos Stripe**: Suscripciones recurrentes
+- ✅ **Animaciones Brutalistas**: Fade-in, slide-up, pulse effects
+- ✅ **SEO Optimizado**: Palabras clave específicas
+- ✅ **SQLite**: Sin dependencias externas de BD en Coolify
+- ✅ **Responsive**: Desktop, tablet, móvil
+- ✅ **Header y Footer Comunes**: Navegación unificada
+
+## 🆕 Nuevas Páginas (v2.1)
+
+| Página | URL | Descripción |
+|--------|-----|-------------|
+| Blog | `/blog` | Artículos sobre control horario, normativa, comparativas |
+| Post Blog | `/blog/[slug]` | Posts individuales con contenido rico |
+| Estado Servicio | `/status` | Uptime, incidents, estado en tiempo real |
+| Contacto | `/contacto` | Formulario + FAQ, envía emails automáticos |
+| Dashboard Empleado | `/dashboard/empleado` | Fichaje entrada/salida, historial |
+| Dashboard Dueño | `/dashboard/dueno` | Gestión empleados, reportes, compliance |
+| Dashboard Admin | `/dashboard/admin` | Métricas globales, empresas, ingresos |
 
 ## 🛠 Stack Tecnológico
 
 - **Frontend**: Next.js 15 + React 19 + TypeScript
-- **Estilos**: Tailwind CSS 3 (brutalista minimalista)
+- **Estilos**: Tailwind CSS 3 (brutalista, sin framework UI)
 - **Base de Datos**: Prisma ORM + SQLite
+- **Email**: Nodemailer (SMTP configurable)
 - **Pagos**: Stripe API
-- **Deploy**: Docker (multietapa) + Coolify-ready
+- **Deploy**: Docker (multietapa) + Coolify
 - **Autenticación**: JWT + Cookies seguras
-
-## 📦 Stack
-
-```
-frontend/
-├── Next.js 15 (App Router)
-├── TypeScript
-├── Tailwind CSS
-├── Prisma Client
-└── Stripe SDK
-
-backend/
-├── Next.js API Routes
-├── Prisma ORM
-├── SQLite Database
-└── Server Actions
-
-devops/
-├── Dockerfile (multietapa)
-├── docker-compose.yml
-└── SQLite (sin backend BD)
-```
 
 ## 🚀 Inicio Rápido
 

@@ -1,5 +1,12 @@
 import { BrutalButton, BrutalCard } from "@/components/ui";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Fichaje SaaS | Control Horario y Sistema de Fichaje en Barcelona",
+  description: "Plataforma profesional de control horario que cumple con la normativa laboral española. Sistema fichaje en Barcelona. Cumplimiento R.D. 1741/1998 y RGPD.",
+  keywords: "control horario, fichaje, sistema fichaje barcelona, españa, RGPD"
+};
 
 const plans = [
   { name: "Starter", monthly: "9 EUR", yearly: "90 EUR", employees: "Hasta 5 empleados", features: ["Registro básico", "Reportes mensuales", "Soporte por email"] },
@@ -11,58 +18,74 @@ export default function HomePage() {
   return (
     <main className="mx-auto max-w-7xl px-4 py-16">
       {/* Hero Section */}
-      <section className="mb-24 animate-fade-in">
-        <div className="border-4 border-black p-12">
-          <p className="mb-4 font-mono text-xs uppercase tracking-widest text-gray-600">control horario legal en españa</p>
+      <section className="mb-24 animate-fade-in" id="inicio">
+        <div className="border-4 border-black p-12 animate-pulse-border">
+          <p className="mb-4 font-mono text-xs uppercase tracking-widest text-gray-600">💼 Control horario legal en España</p>
           <h1 className="font-title text-5xl uppercase leading-tight mb-6 md:text-6xl">
-            Fichaje Retro-Brutalista
+            Fichaje SaaS
           </h1>
           <p className="mb-8 max-w-3xl font-mono text-base leading-relaxed">
-            Plataforma profesional de control horario que cumple con la normativa laboral española. 
+            Plataforma profesional de <strong>control horario y fichaje</strong> que cumple con la normativa laboral española. 
             Registra entradas y salidas con trazabilidad completa, historial de jornada y exportación. 
-            Cumple con la obligación de registro diario y conservación de datos exigida por el real decreto 1741/1998.
+            <strong>Sistema fichaje en Barcelona y toda España</strong>. Cumple con R.D. 1741/1998 y RGPD.
           </p>
           <div className="flex flex-wrap gap-4">
-            <BrutalButton href="/auth/login">Acceder</BrutalButton>
-            <BrutalButton href="/auth/register">Comenzar Prueba Gratuita</BrutalButton>
+            <BrutalButton href="/auth/login">Acceder al dashboard</BrutalButton>
+            <BrutalButton href="/auth/register" variant="white">Comenzar Prueba Gratuita</BrutalButton>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="mb-24 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-        <h2 className="font-title text-4xl uppercase mb-12">Características Principales</h2>
+      {/* Features Section with animations */}
+      <section className="mb-24" id="features">
+        <h2 className="font-title text-4xl uppercase mb-12 animate-fade-in">Características Principales</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <BrutalCard title="Registro Completo">
-            Hora concreta de entrada y salida con timestamp automático.
-          </BrutalCard>
-          <BrutalCard title="Trazabilidad Total">
-            Historial completo de jornada para auditoría e inspección.
-          </BrutalCard>
-          <BrutalCard title="Normativa Española">
-            Cumple R.D. 1741/1998 y RGPD con máxima seguridad.
-          </BrutalCard>
-          <BrutalCard title="Exportación Fácil">
-            Descarga reportes en PDF, Excel y otros formatos.
-          </BrutalCard>
-          <BrutalCard title="Análisis por Empresa">
-            Métricas de productividad y cumplimiento normativo.
-          </BrutalCard>
-          <BrutalCard title="Acceso Móvil">
-            Registra desde cualquier dispositivo en tiempo real.
-          </BrutalCard>
-          <BrutalCard title="Integración API">
-            Conecta con tu software de RRHH y nómina.
-          </BrutalCard>
-          <BrutalCard title="Soporte 24/7">
-            Equipo experto en normativa laboral española.
-          </BrutalCard>
+          <div className="feature-card">
+            <BrutalCard title="✓ Registro Completo">
+              Hora concreta de entrada y salida con timestamp automático.
+            </BrutalCard>
+          </div>
+          <div className="feature-card">
+            <BrutalCard title="✓ Trazabilidad Total">
+              Historial completo de jornada para auditoría e inspección.
+            </BrutalCard>
+          </div>
+          <div className="feature-card">
+            <BrutalCard title="✓ Normativa Española">
+              Cumple R.D. 1741/1998 y RGPD con máxima seguridad.
+            </BrutalCard>
+          </div>
+          <div className="feature-card">
+            <BrutalCard title="✓ Exportación Fácil">
+              Descarga reportes en PDF, Excel y otros formatos.
+            </BrutalCard>
+          </div>
+          <div className="feature-card">
+            <BrutalCard title="✓ Análisis por Empresa">
+              Métricas de productividad y cumplimiento normativo.
+            </BrutalCard>
+          </div>
+          <div className="feature-card">
+            <BrutalCard title="✓ Acceso Móvil">
+              Registra desde cualquier dispositivo en tiempo real.
+            </BrutalCard>
+          </div>
+          <div className="feature-card">
+            <BrutalCard title="✓ Integración API">
+              Conecta con tu software de RRHH y nómina.
+            </BrutalCard>
+          </div>
+          <div className="feature-card">
+            <BrutalCard title="✓ Soporte 24/7">
+              Equipo experto en normativa laboral española.
+            </BrutalCard>
+          </div>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section className="mb-24 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-        <h2 className="font-title text-4xl uppercase mb-12">Planes Dinámicos</h2>
+      <section className="mb-24 animate-fade-in" id="planes" style={{ animationDelay: "0.2s" }}>
+        <h2 className="font-title text-4xl uppercase mb-12">Planes para Empresas</h2>
         <div className="grid gap-6 md:grid-cols-3">
           {plans.map((plan) => (
             <div
@@ -110,15 +133,15 @@ export default function HomePage() {
       <section className="mb-24 animate-fade-in" style={{ animationDelay: "0.3s" }}>
         <h2 className="font-title text-4xl uppercase mb-12">Cumplimiento Normativo</h2>
         <div className="grid gap-6 md:grid-cols-3">
-          <BrutalCard title="Registro Diario">
+          <BrutalCard title="📋 Registro Diario">
             <p className="mb-3">Debe incluir hora concreta de inicio y fin de la jornada ordinaria y de los períodos de descanso.</p>
             <p className="font-mono text-xs text-gray-600">Real Decreto 1741/1998</p>
           </BrutalCard>
-          <BrutalCard title="Conservación 4 Años">
+          <BrutalCard title="📅 Conservación 4 Años">
             <p className="mb-3">Los registros deben mantenerse accesibles durante cuatro años consecutivos para inspección.</p>
             <p className="font-mono text-xs text-gray-600">Normativa laboral española</p>
           </BrutalCard>
-          <BrutalCard title="Inspección de Trabajo">
+          <BrutalCard title="🔍 Inspección de Trabajo">
             <p className="mb-3">La empresa debe poder mostrar registros ante Inspección de Trabajo sin demoras.</p>
             <p className="font-mono text-xs text-gray-600">Procedimiento normalizado</p>
           </BrutalCard>
@@ -135,32 +158,9 @@ export default function HomePage() {
           <BrutalButton href="/auth/register">Crear Cuenta Gratis</BrutalButton>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="border-t-4 border-black pt-12 mt-12">
-        <div className="grid gap-8 md:grid-cols-3 mb-8">
-          <div>
-            <h3 className="font-title text-lg uppercase mb-4">Producto</h3>
-            <ul className="font-mono text-sm space-y-2">
-              <li><Link href="/" className="hover:underline">Características</Link></li>
-              <li><Link href="/" className="hover:underline">Precios</Link></li>
-              <li><Link href="/" className="hover:underline">Seguridad</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-title text-lg uppercase mb-4">Empresa</h3>
-            <ul className="font-mono text-sm space-y-2">
-              <li><Link href="/" className="hover:underline">Blog</Link></li>
-              <li><Link href="/" className="hover:underline">Contacto</Link></li>
-              <li><Link href="/" className="hover:underline">Status</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-title text-lg uppercase mb-4">Legal</h3>
-            <ul className="font-mono text-sm space-y-2">
-              <li><Link href="/aviso-legal" className="hover:underline">Aviso Legal</Link></li>
-              <li><Link href="/politica-privacidad" className="hover:underline">Privacidad</Link></li>
-              <li><Link href="/politica-cookies" className="hover:underline">Cookies</Link></li>
+    </main>
+  );
+}
             </ul>
           </div>
         </div>

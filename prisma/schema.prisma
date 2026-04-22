@@ -92,3 +92,45 @@ model Subscription {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model BlogPost {
+  id        String   @id @default(cuid())
+  title     String
+  slug      String   @unique
+  excerpt   String
+  content   String
+  category  String
+  author    String   @default("Fichaje Admin")
+  featured  Boolean  @default(false)
+  published Boolean  @default(true)
+  views     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  publishedAt DateTime?
+
+  @@index([slug])
+  @@index([category])
+  @@index([published])
+}
+
+model StatusPage {
+  id        String   @id @default(cuid())
+  status    String   // operational, degraded, offline
+  uptime    Float    @default(99.9)
+  incidents String   @default("[]") // JSON array of incidents
+  lastCheck DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([email])
+  @@index([read])
+}
